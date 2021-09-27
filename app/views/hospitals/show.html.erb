@@ -7,5 +7,8 @@
   <body>
     Name: <%= @hospital.name %><br>
     Number of Doctors: <%= @hospital.doctors.length %><br>
+    Schools attended by Doctors: <% @unique_universities.each do |doc| %>
+      <%= doc.university %>
+    <% end %>
   </body>
 </html>

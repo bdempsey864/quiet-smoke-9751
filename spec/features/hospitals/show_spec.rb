@@ -6,7 +6,7 @@ RSpec.describe 'doctor show page' do
     @hospital_2 = Hospital.create!(name: "General")
 
     @doc_1 = @hospital_1.doctors.create!(name: "Dre", specialty: "Tunes", university: "Hard Knocks") 
-    @doc_2 = @hospital_1.doctors.create!(name: "Martin", specialty: "Shoes", university: "CSU") 
+    @doc_2 = @hospital_1.doctors.create!(name: "Martin", specialty: "Shoes", university: "Hard Knocks") 
     @doc_3 = @hospital_2.doctors.create!(name: "Jay", specialty: "Ballin", university: "UCLA")
 
     @p_1 = Patient.create!(name: "Derek", age: 30)
@@ -32,5 +32,9 @@ RSpec.describe 'doctor show page' do
 
   it 'shows the number of doctors working at hospital' do
     expect(page).to have_content("Number of Doctors: 2")
+  end
+
+  it 'does not show university duplicates' do
+    expect(page).to have_content("Hard Knocks", count: 1)
   end
 end
