@@ -5,8 +5,9 @@
   </head>
 
   <body>
-    Name: <%= @doctor.name %>
-    Specialty: <%= @doctor.specialty %>
-    School: <%= @doctor.university %>
+    Name: <%= @doctor.name %><br>
+    Specialty: <%= @doctor.specialty %><br>
+    School: <%= @doctor.university %><br>
+    Employed by: <%= @doctor.hospital.name %>
   </body>
 </html>
