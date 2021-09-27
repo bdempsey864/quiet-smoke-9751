@@ -8,6 +8,9 @@
     Name: <%= @doctor.name %><br>
     Specialty: <%= @doctor.specialty %><br>
     School: <%= @doctor.university %><br>
-    Employed by: <%= @doctor.hospital.name %>
+    Employed by: <%= @doctor.hospital.name %><br>
+    Patients: <% @doctor.patients.each do |patient| %>
+      <%= patient.name %>
+    <% end %>
   </body>
 </html>
