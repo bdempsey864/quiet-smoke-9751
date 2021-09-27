@@ -23,23 +23,10 @@ RSpec.describe 'doctor show page' do
     DocPatient.create!(patient: @p_5, doctor: @doc_3)
     DocPatient.create!(patient: @p_6, doctor: @doc_3)
 
-    visit "doctors/#{@doc_1.id}"
+    visit "hospitals/#{@hospital_1.id}"
   end
 
-  it 'returns all of doctors info' do 
-    expect(page).to have_content(@doc_1.name)
-    expect(page).to have_content(@doc_1.specialty)
-    expect(page).to have_content(@doc_1.university)
-  end
-
-  it 'lists the hospital the doctor works at' do
+  it 'returns hospitals name' do
     expect(page).to have_content(@hospital_1.name)
-  end
-
-  it 'lists all the patients doctor has' do
-    expect(page).to have_content(@p_1.name)
-    expect(page).to have_content(@p_3.name)
-    expect(page).to have_content(@p_4.name)
-    expect(page).to_not have_content(@p_2.name)
   end
 end
