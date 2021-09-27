@@ -10,7 +10,8 @@
     School: <%= @doctor.university %><br>
     Employed by: <%= @doctor.hospital.name %><br>
     Patients: <% @doctor.patients.each do |patient| %>
-      <%= patient.name %>
+      <%= patient.name %> 
+      <%= link_to "Remove #{patient.name}", doc_patient_path,  method: :delete %>
     <% end %>
   </body>
 </html>
