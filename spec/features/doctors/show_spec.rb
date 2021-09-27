@@ -26,4 +26,9 @@ RSpec.describe 'doctor show page' do
     visit "doctors/#{@doc_1.id}"
   end
 
+  it 'returns all of doctors info' do 
+    expect(page).to have_content(@doc_1.name)
+    expect(page).to have_content(@doc_1.specialty)
+    expect(page).to have_content(@doc_1.university)
+  end
 end
