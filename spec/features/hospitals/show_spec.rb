@@ -29,4 +29,8 @@ RSpec.describe 'doctor show page' do
   it 'returns hospitals name' do
     expect(page).to have_content(@hospital_1.name)
   end
+
+  it 'shows the number of doctors working at hospital' do
+    expect(page).to have_content("Number of Doctors: 2")
+  end
 end
